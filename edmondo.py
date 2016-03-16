@@ -12,7 +12,7 @@ class MainPage(webapp2.RequestHandler):
 
     session=self.request.get('session') #the session
     name=self.request.get('name') # name
-    score=long("0"+self.request.get('score')) # score
+    score=long(self.request.get('score')) # score
  
     if self.request.get('type')=='add':  # Adding a new score
           q = db.GqlQuery("SELECT * FROM Scores WHERE session = :k1 AND name = :k2",k1=session, k2=name)
